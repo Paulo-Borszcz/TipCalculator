@@ -9,6 +9,18 @@ const fifteenPerCent = document.querySelector('#quinze');
 const twentyFivePerCent = document.querySelector('#vinte_e_cinco');
 const fiftyPerCent = document.querySelector('#cinquenta');
 
+bill.addEventListener('input', function() {
+    if(Number(bill.value) > 9999 || Number(bill.value) < 0) {
+        this.value = 9999;
+        console.error("Só são aceitos calculos de contas de números até 4 digitos e positivos");
+    }
+});
+
+people.addEventListener('input', function() {
+    if(Number(bill.value) > 9999) {
+        this.value = 9999
+    }
+});
 
 function calculateTip(percent) {
       let tip = Number(bill.value) * percent;

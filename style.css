@@ -242,3 +242,89 @@ button:active, button:hover{
       background-color: var(--light-grayish-cyan);
       color: var(--very-dark-cyan);
 }
+
+@media only screen and (max-width: 600px) {
+      
+
+      section{
+            flex-direction: column;
+            height: 92vh;
+            justify-content: center;
+            height: auto;
+            width: auto;
+            border-radius: 1rem;
+      }
+      #left{
+            padding-right: 0;
+            justify-content: center;
+            padding-top: 2rem;
+            align-items: start;
+            height: auto;
+      }
+      #bill-input, #people-input{
+            width: 100%;
+      }
+      #bill-calc{
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+      }
+      #buttons-container{
+            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+      }
+      #number-peoples-container{
+            margin-top: 0.5rem
+      }
+
+      #right{
+            margin-top: 1rem;
+            width: 100%;
+            height: auto;
+            align-items: start;
+            border-radius: 0 0 1rem 1rem;
+            background-color: var(--white);
+      }
+      #amounts{
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            gap: 2rem;
+      }
+      #reset-container {
+            margin-top: 2.5rem;
+      }
+      .spantype{
+            color: var(--strong-cyan);
+      }
+      #reset{
+            color: var(--very-light-grayish-cyan);
+            background-color: var(--very-dark-cyan);
+            width: auto;
+            padding: 2rem;
+            padding-bottom: 2rem;
+            display: flex;
+            align-items: center;
+      }
+      
+      #tip-amount-value-container span, #total-amount-value-container span{
+            font-size: 32px;
+      }
+
+      #tip-amount{
+            justify-content: space-around;
+      }
+      #buttons-container{
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+      }
+      #buttons-container button {
+            padding: 0.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+      }
+      #Custom{
+            font-size:  13px;
+      }
+      
+    }
