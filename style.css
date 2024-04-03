@@ -1,0 +1,244 @@
+:root {
+      --main-bg-color: brown;
+      --very-dark-cyan: hsl(183, 100%, 15%);
+      --dark-grayish-cyan: hsl(186, 14%, 43%);
+      --grayish-cyan: hsl(184, 14%, 56%);
+      --light-grayish-cyan: hsl(185, 41%, 84%);
+      --very-light-grayish-cyan: hsl(189, 41%, 97%);
+      --strong-cyan: hsl(172, 67%, 45%);
+      --white: hsl(0, 0%, 100%);
+      --mono: "Space Mono";
+      font-family: var(--mono);
+}
+
+/* Remove o padrão implantado pelo navegador em inputs do type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+}
+input[type=number] {
+      -moz-appearance: textfield;
+}
+
+
+body {
+      background-color: var(--light-grayish-cyan);
+      display: flex;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+}
+
+section {
+      background-color: var(--white);
+      width: 60vw;
+      height: 60vh;
+      border-radius: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+#left {
+      width: 45%;
+      height: 90%;
+      padding-right: 2rem;
+      display: flex;
+      align-items: center; 
+
+}
+
+#right {
+      width: 45%;
+      height: 80%;
+      background-color: var(--very-dark-cyan);
+      border-radius: 1rem;
+      display: grid;
+      grid-template-rows: 2fr 1.5fr;
+
+}
+
+#bill-calc{
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+}
+
+h2 {
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--dark-grayish-cyan);
+}
+
+#dollar{
+      height: 18px;
+      width: 10px;
+      position: absolute;
+      padding-left: 1rem;
+}
+
+#bill-input{
+      height: 3rem;
+      width: 25vw;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: var(--very-light-grayish-cyan);
+      text-align: end;
+      padding-right: 1rem;
+      margin-top: 0.5rem;
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--very-dark-cyan);
+      position: relative;
+}
+
+#buttons-container{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+}
+
+button {
+      height: 2.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      color: var(--white);
+      background-color: var(--very-dark-cyan);
+      font-family: var(--mono);
+      font-size: 24px;
+      cursor: pointer;
+}
+
+button:active, button:hover{
+      background-color: var(--strong-cyan);
+      color: var(--very-dark-cyan);
+      transition: 0.3s;
+}
+
+
+#Custom {
+      background-color: var(--very-light-grayish-cyan);
+      color: var(--dark-grayish-cyan);
+}
+
+#Custom:hover, #Custom:active{
+      background-color: var(--dark-grayish-cyan);
+      color: var(--very-light-grayish-cyan);
+      transition: 0.3s;
+}
+
+#people{
+      height: 16px;
+      width: 12px;
+      position: absolute;
+      padding-left: 1rem;
+}
+
+#people-input{
+      height: 3rem;
+      width: 25vw;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: var(--very-light-grayish-cyan);
+      text-align: end;
+      padding-right: 1rem;
+      margin-top: 0.5rem;
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--very-dark-cyan);
+      position: relative;
+}
+
+#number-peoples-container{
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+}
+
+#tip-amount{
+      display: flex;
+      justify-content: space-around;
+      gap: 3rem;
+      align-items: center;
+}
+
+#tip-amount-span{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+}
+
+#tip-amount-value-container{
+      display: flex;
+      gap: 0.5rem;
+}
+
+.spantype{
+      color: var(--white);
+}
+.spanrest{
+      color: var(--grayish-cyan);
+}
+
+#tip-amount-value-container span{
+      color: var(--strong-cyan);
+      font-size: 48px;
+}
+
+#total-amount{
+      display: flex;
+      justify-content: space-around;
+      gap: 3rem;
+      align-items: center;
+}
+
+#total-amount-span{
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+}
+
+#total-amount-value-container{
+      display: flex;
+      gap: 0.5rem;
+}
+
+#total-amount-value-container span{
+      color: var(--strong-cyan);
+      font-size: 48px;
+}
+
+#amounts{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-top: 2rem;
+}
+
+#reset-container{
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      margin-bottom: 2rem;
+}
+
+#reset{
+      width: 20vw;
+      background-color: var(--strong-cyan);
+      color: var(--very-dark-cyan);
+}
+
+#reset:hover, #reset:active{
+      background-color: var(--light-grayish-cyan);
+      color: var(--very-dark-cyan);
+}
