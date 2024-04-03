@@ -1,71 +1,39 @@
+const bill = document.querySelector('#bill-input');
+const people = document.querySelector('#people-input');
+const tipAmount = document.querySelector('#tip-amount-value');
+const totalAmount = document.querySelector('#total-amount-value');
 
-let bill = document.querySelector('#bill-input');
-let people = document.querySelector('#people-input');
-let tipAmount = document.querySelector('#tip-amount-value');
-let totalAmount = document.querySelector('#total-amount-value');
-const fivePerCent = document.querySelector('#cinco');
-const tenPerCent = document.querySelector('#dez');
-const fifteenPerCent = document.querySelector('#quinze');
-const twentyFivePerCent = document.querySelector('#vinte_e_cinco');
-const fiftyPerCent = document.querySelector('#cinquenta');
-
-bill.addEventListener('input', function() {
-    
-    if(Number(bill.value) > 9999 || Number(bill.value) < 0) {
-        this.value = 9999;
-        console.error("Só são aceitos calculos de contas de números até 4 digitos e positivos");
+function validateInput(input, max) {
+    if (Number(input.value) > max || Number(input.value) < 0) {
+        input.value = input.value > max ? max : 0;
+        alert("A entrada deve ser um número positivo até " + max + ".");
     }
-});
+}
 
-people.addEventListener('input', function() {
-    if(Number(bill.value) > 9999) {
-        this.value = 9999
-    }
-});
+bill.addEventListener('input', () => validateInput(bill, 9999));
+people.addEventListener('input', () => validateInput(people, 9999));
+
 
 function calculateTip(percent) {
-      let tip = Number(bill.value) * percent;
-      const tipInitial = tip;
-      let total;
+    let billValue = Number(bill.value);
+    let peopleCount = Number(people.value) || 1;
+    let tip = (billValue * percent) / peopleCount;
+    let total = (billValue + billValue * percent) / peopleCount;
 
-      Number(people.value) > 0 ? tip=(tip/Number(people.value)).toFixed(2) : tip=tip.toFixed(2);
-      tipAmount.textContent=(String(tip)).replace(".",",");
-      
-      Number(people.value) > 0 ? total = ((tipInitial + Number(bill.value))/people.value).toFixed(2) : total = (tipInitial + Number(bill.value)).toFixed(2);
-      totalAmount.textContent=(String(total)).replace(".",",");
-      
-      if (Number(bill.value) === 0) {
-        tipAmount.textContent = '0';
-        totalAmount.textContent = '0';
-        
-      }
+    tipAmount.textContent = tip.toFixed(2).replace(".", ",");
+    totalAmount.textContent = total.toFixed(2).replace(".",",");
+}
 
-  }
-  
-  
-  document.querySelector('#cinco').addEventListener('click', function () {
-      let tip = calculateTip(0.05);
-  });
-  
-  document.querySelector('#dez').addEventListener('click', function () {
-      let tip = calculateTip(0.10);
-  });
-  
-  document.querySelector('#quinze').addEventListener('click', function () {
-      let tip = calculateTip(0.15);
-  });
-  
-  document.querySelector('#vinte_e_cinco').addEventListener('click', function () {
-      let tip = calculateTip(0.25);
-  });
-  
-  document.querySelector('#cinquenta').addEventListener('click', function () {
-      let tip = calculateTip(0.50);
-  });
+document.querySelectorAll('.tip-button').forEach(button => {
+    button.addEventListener('click', function() {
+        calculateTip(parseFloat(this.dataset.tipPercent));
+    });
+});
 
-  document.querySelector('#reset').addEventListener('click', function(){
+document.querySelector('#reset').addEventListener('click', function() {
     bill.value = 0;
     people.value = 0;
-    tipAmount.textContent = 0;
-    totalAmount.textContent = 0;
-  })
+    tipAmount.textContent = '0,00';
+    totalAmount.textContent = '0,00';
+});
+
