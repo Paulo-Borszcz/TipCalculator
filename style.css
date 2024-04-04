@@ -254,6 +254,85 @@ button:active, button:hover{
       color: var(--very-dark-cyan);
 }
 
+#modal{
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+#content{
+      width: auto;
+      height: auto;
+      padding: 2rem;
+      background-color: var(--white);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 1rem;
+}
+
+#Custom-input{
+      height: 3rem;
+      width: 10rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      background-color: var(--very-light-grayish-cyan);
+      text-align: end;
+      padding-right: 1rem;
+      margin-top: 0;
+      font-family: var(--mono);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--very-dark-cyan);
+}
+
+#calculate {
+      height: 3rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+}
+
+#texts{
+      display: flex;
+      justify-content: space-between;
+}
+
+#x {
+      height: 1.5rem;
+      cursor: pointer;
+      margin-top: -1.2rem;
+      margin-right: -1rem;
+}
+
+#input-container{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+}
+
+#warning{
+      height: 1rem;
+}
+#warningtxt{
+      color: red;
+      font-size: 10px;
+      display: none;
+
+}
+
+
 @media only screen and (max-width: 600px) {
       
 
@@ -336,6 +415,14 @@ button:active, button:hover{
       }
       #Custom{
             font-size:  13px;
+      }
+      
+      #texts{
+            gap: 1.5rem;;
+      }
+
+      #input-container{
+            flex-direction: column;
       }
       
     }
