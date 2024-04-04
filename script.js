@@ -8,6 +8,7 @@ const tenPerCent = document.querySelector('#dez');
 const fifteenPerCent = document.querySelector('#quinze');
 const twentyFivePerCent = document.querySelector('#vinte_e_cinco');
 const fiftyPerCent = document.querySelector('#cinquenta');
+document.querySelector("#txt").style.display = "none";
 
 bill.addEventListener('input', function() {
     if(Number(bill.value) > 9999 || Number(bill.value) < 0) {
@@ -36,7 +37,12 @@ function calculateTip(percent) {
       if (Number(bill.value) === 0) {
         tipAmount.textContent = '0';
         totalAmount.textContent = '0';
+        bill.style.border = "3px red solid";
+        document.querySelector("#txt").style.display = "inline";
         
+      } else {
+        bill.style.border = "none";
+        document.querySelector("#txt").style.display = "none";
       }
 
   }

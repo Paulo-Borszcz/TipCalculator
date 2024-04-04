@@ -63,8 +63,19 @@ section {
 #bill-calc{
       display: flex;
       align-items: center;
-      margin-bottom: 2rem;
       margin-top: 1rem;
+}
+
+#text{
+      height: 2rem;
+      display: flex;
+      align-items: center;
+}
+
+#text p {
+      color: red;
+      display: flex;
+      font-size: 10px;
 }
 
 h2 {
